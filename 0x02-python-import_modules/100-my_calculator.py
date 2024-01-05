@@ -4,7 +4,7 @@ import sys
 from calculator_1 import add, sub, mul, div
 
 argv = sys.argv
-args_len = len(argv)
+args_len = len(argv) - 1
 
 operators = {
     "+": add,
@@ -22,7 +22,7 @@ if argv[2] not in operators:
     sys.exit(1)
 
 arg1 = int(argv[1])
-operator = argv[1]
+operator = argv[2]
 arg2 = int(argv[3])
 
 if __name__ == "__main__":
