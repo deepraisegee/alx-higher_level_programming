@@ -21,12 +21,16 @@ if argv[2] not in operators:
     print("Unknown operator. Available operators: +, -, * and /")
     sys.exit(1)
 
+arg1 = int(argv[1])
+operator = argv[1]
+arg2 = int(argv[3])
+
 if __name__ == "__main__":
     print(
       "{} {} {} = {}".format(
-                    argv[1],
-                    argv[2],
-                    argv[3],
-                    operators[argv[2]](argv[1], argv[3])
+                    arg1,
+                    operator,
+                    arg2,
+                    operators[operator](arg1, arg2)
                 )
     )
