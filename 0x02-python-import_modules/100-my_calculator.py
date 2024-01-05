@@ -23,5 +23,10 @@ if argv[2] not in operators:
 
 if __name__ == "__main__":
     print(
-      "{} {} {} = {}".format(argv[1], argv[2], argv[3], operators[argv[2]])
+      "{} {} {} = {}".format(
+                    argv[1],
+                    argv[2],
+                    argv[3],
+                    operators[argv[2]](argv[1], argv[3])
+                )
     )
