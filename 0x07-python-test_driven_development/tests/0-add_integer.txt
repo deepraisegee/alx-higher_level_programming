@@ -1,0 +1,10 @@
+"""
+A function that adds 2 integers.
+
+>>> add_interger(1, 2)
+3
+>>> add_integer(2)
+100
+"""
+
+
