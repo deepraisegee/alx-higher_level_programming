@@ -1,34 +1,5 @@
 #!/usr/bin/node
-
-class Rectangle {
-  constructor (w, h) {
-    if (!w || !h) return;
-    if (w <= 0 || h <= 0) return;
-    this.width = w;
-    this.height = h;
-  }
-
-  print () {
-    for (let i = 0; i < this.height; i++) {
-      let x = '';
-      for (let j = 0; j < this.width; j++) {
-        x += 'X';
-      }
-      console.log(x);
-    }
-  }
-
-  rotate () {
-    const tmp = this.width;
-    this.width = this.height;
-    this.height = tmp;
-  }
-
-  double () {
-    this.width *= 2;
-    this.height *= 2;
-  }
-}
+const Rectangle = require('./4-rectangle');
 
 class Square extends Rectangle {
   constructor (size) {
@@ -38,11 +9,11 @@ class Square extends Rectangle {
   }
 
   charPrint (c) {
+    const l = c || 'X';
     for (let i = 0; i < this.height; i++) {
-      const letter = c || 'X';
       let x = '';
       for (let j = 0; j < this.width; j++) {
-        x += letter;
+        x += l;
       }
       console.log(x);
     }
