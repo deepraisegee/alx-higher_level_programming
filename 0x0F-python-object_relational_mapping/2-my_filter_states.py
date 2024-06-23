@@ -12,7 +12,7 @@ def main():
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    query = sys.argv[4]
+    query = "SELECT * FROM states WHERE name='{}'".format(sys.argv[4])
 
     # connect to MySQL db
     db = MySQLdb.connect(
@@ -26,10 +26,7 @@ def main():
     cur = db.cursor()
 
     # execute sql query
-    cur.execute(
-        "SELECT * FROM states WHERE name = %s",
-        (query,)
-    )
+    cur.execute(query)
     states = cur.fetchall()
 
     # close the cursor
