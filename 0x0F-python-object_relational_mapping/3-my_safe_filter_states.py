@@ -27,7 +27,8 @@ def main():
 
     # execute sql query
     cur.execute(
-          "SELECT * FROM states WHERE name='{}'".format(query)
+          "SELECT * FROM states WHERE name=%s",
+          (query,)
         )
     states = cur.fetchall()
 
