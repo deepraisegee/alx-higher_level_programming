@@ -12,7 +12,6 @@ def main():
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    query = sys.argv[4]
 
     # connect to MySQL db
     db = MySQLdb.connect(
@@ -27,7 +26,8 @@ def main():
 
     # execute sql query
     cur.execute(
-          "SELECT * FROM cities"
+          "SELECT cities.id, cities.name, states.name "
+          "FROM cities JOIN states ON states.id = cities.state_id"
         )
     states = cur.fetchall()
 
